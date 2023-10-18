@@ -1,3 +1,5 @@
+###scrape_cjs.py - Scrape the web for addresses of every Carl's Jr. Location
+###
 # Import Modules
 import bs4, requests, pandas as pd
 
@@ -46,10 +48,18 @@ for i in range(len(stateElems)):
             postal_code_list.append(postal_code[i].get_text())
 print('Carls Jr Extraction Complete')
 
-cjs = pd.DataFrame()
+cjs = pd.DataFrame(columns = ['location_id', 'street_address', 'city', 'state', 'postal_code', 'restaurant'])
 cjs['street_address'] = street_add_list
 cjs['city'] = city_list
 cjs['state'] = state_list
 cjs['postal_code'] = postal_code_list
 cjs['restaurant'] = 'Carl\'s Jr'
-cjs.to_csv('cjs.csv')
+# Give each restaurant a unique id
+n = 1
+for i in range(len(street_add_list)):
+    cjs['location_id'][i] = f'CJ-{n}'
+    n += 1
+
+# Save csv    
+
+cjs.to_csv('cjs.csv', index = False)

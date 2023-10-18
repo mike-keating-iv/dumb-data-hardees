@@ -1,3 +1,5 @@
+###scrape_hardees.py - Scrape the web for addresses of every Hardees Location
+###
 # Import Modules
 import bs4, requests, pandas as pd
 
@@ -46,19 +48,26 @@ for i in range(len(stateElems)):
         
 print('Hardees Extraction Complete')
 
+##Store dataframe to csv
 
-hardees = pd.DataFrame()
+hardees = pd.DataFrame(columns = ['location_id', 'street_address', 'city', 'state', 'postal_code', 'restaurant'])
+
+
 hardees['street_address'] = street_add_list
 hardees['city'] = city_list
 hardees['state'] = state_list
 hardees['postal_code'] = postal_code_list
 hardees['restaurant'] = 'Hardee\'s'
-#Extract location information from location page
-#url = specific url
-#restaurant = ['Hardee\'s' for x in range(len(street_add_list))]
-#hardees = pd.DataFrame(data = [restaurant, street_add_list, city_list, state_list, postal_code_list], 
-                               #columns=['restaurant' 'street_address', 'city', 'state', 'postal_code'])
-hardees.to_csv('hardees.csv')
+hardees['location_id'] = []
+
+# Give each restaurant a unique id
+n = 1
+for i in range(len(street_add_list)):
+    hardees['location_id'][i] = f'HD-{n}'
+    n += 1
+
+# Save csv    
+hardees.to_csv('hardees.csv', index=False)
 
 
 
