@@ -53,7 +53,7 @@ cjs['street_address'] = street_add_list
 cjs['city'] = city_list
 cjs['state'] = state_list
 cjs['postal_code'] = postal_code_list
-cjs['restaurant'] = 'Carl\'s Jr'
+cjs['restaurant'] = 'CJ'
 # Give each restaurant a unique id
 n = 1
 for i in range(len(street_add_list)):

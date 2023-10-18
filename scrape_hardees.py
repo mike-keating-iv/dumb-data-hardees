@@ -48,17 +48,15 @@ for i in range(len(stateElems)):
         
 print('Hardees Extraction Complete')
 
-##Store dataframe to csv
-
+##Create empty dataframe
 hardees = pd.DataFrame(columns = ['location_id', 'street_address', 'city', 'state', 'postal_code', 'restaurant'])
 
-
+# Assign data
 hardees['street_address'] = street_add_list
 hardees['city'] = city_list
 hardees['state'] = state_list
 hardees['postal_code'] = postal_code_list
-hardees['restaurant'] = 'Hardee\'s'
-hardees['location_id'] = []
+hardees['restaurant'] = 'HD'
 
 # Give each restaurant a unique id
 n = 1
