@@ -27,6 +27,6 @@ geolocator = OpenCage(api_key = '6e44c385bc9e4652bde2f3817b7e6dff', user_agent='
 geocode = RateLimiter(geolocator.geocode, min_delay_seconds = 0.067) #apply rate limiter to avoid time out errors
 print('Getting coord....')
 geodata['coordinates'] = geodata['full_address'].apply(geocode).apply(lambda loc: tuple((loc.latitude, loc.longitude)) if loc else None)
-
+geodata[['latitude', 'longitude']] = pd.DataFrame(geodata['coordinates'].tolist(), index=geodata.index)
 #loop in small chunks
-geodata.to_csv('geodata', index = False)
+geodata.to_csv('geodata.csv', index = False)
