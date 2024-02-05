@@ -7,13 +7,13 @@ Another scout remarks "One day I'd like to eat at a Hardee's and [use the bathro
 
 This led to a few minutes of speculation about how which Hardee's and Carl's Jr. are closest, and if it was even feasible to make such an attempt driving. 
 
-
 The logistics of this question lodged themselves deeply in my 14 year old brain, and what better way to practice webscraping, eda, and optimization than this (dumb) question. 
 
 
 The goal is to answer the following: 
 
--What single one-way path is the shortest between a Carl's Jr. and Hardee's. 
+-What is the general distrubution of Hardee's and Carl's Jr. restaurants in the United States?
+-What single one-way path is the shortest between a Carl's Jr. and Hardee's, ignoring geographical features such as lakes, mountains, etc? 
 
--What if we wanted to visit every Hardee's and every Carl's Jr. at least once, alternating between the two chains? What is the shortest path? How many total miles? 
+
 
