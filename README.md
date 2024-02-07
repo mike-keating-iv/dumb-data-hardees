@@ -9,7 +9,6 @@ This led to a few minutes of speculation about how which Hardee's and Carl's Jr.
 
 The logistics of this question lodged themselves deeply in my 14 year old brain, and what better way to practice webscraping, eda, and optimization than this (dumb) question. 
 
-
 The goal is to answer the following: 
 
 -What is the general distrubution of Hardee's and Carl's Jr. restaurants in the United States?
