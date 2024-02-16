@@ -4,7 +4,7 @@
 import bs4, requests, pandas as pd
 
 
-#Hardee's All Locations Url (By State)
+#Car'ls Junior All Locations Url (By State)
 url = 'https://locations.carlsjr.com/'
 res = requests.get(url)
 res.raise_for_status()
